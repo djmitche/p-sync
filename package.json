@@ -1,0 +1,21 @@
+{
+	"name": "p-sync",
+	"version": "1.0.0",
+	"description": "Limit async function invocations to one at a time",
+	"license": "MIT",
+	"repository": "https://github.com/djmitche/p-sync",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"index.js"
+	],
+	"devDependencies": {
+		"ava": "^1.2.1",
+		"delay": "^4.1.0",
+		"xo": "^0.24.0"
+	}
+}
