@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"repository": "https://github.com/djmitche/p-synchronize",
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"scripts": {
 		"test": "xo && ava"
