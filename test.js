@@ -1,6 +1,9 @@
 import test from 'ava';
 import delay from 'delay';
+import allSettled from 'promise.allsettled';
 import pSynchronize from '.';
+
+allSettled.shim();
 
 const testfunc = (name, events) => async i => {
 	events.push(`${name}-start:${i}`);
