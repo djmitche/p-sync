@@ -1,4 +1,4 @@
-# p-limit [![Build Status](https://travis-ci.org/djmitche/p-sync.svg?branch=master)](https://travis-ci.org/djmitche/p-sync)
+# p-synchronize [![Build Status](https://travis-ci.org/djmitche/p-synchronize.svg?branch=master)](https://travis-ci.org/djmitche/p-synchronize)
 
 > Limit async function invocations to one at a time
 
@@ -7,15 +7,15 @@
 ## Install
 
 ```
-$ npm install p-sync
+$ npm install p-synchronize
 ```
 
 ## Usage
 
 ```js
-const pSync = require('p-sync');
+const pSynchronize = require('p-synchronize');
 
-const sync = pSync();
+const sync = pSynchronize();
 
 const recalibrate = sync(async (options) => {
     // ... some long operation
@@ -38,7 +38,7 @@ const input = [
 
 ## API
 
-### sync = pSync()
+### sync = pSynchronize()
 
 Returns a synchronizer.
 
@@ -55,12 +55,12 @@ This package is similar, but expresses the one-at-a-time behavior more naturally
 ### How can I know that the synchronized operations are complete?
 
 For example, in an object implementing a service, you may want a clean way to shut down the service.
-`p-sync` can synchronize multiple functions, so just synchronize an empty function:
+`p-synchronize` can synchronize multiple functions, so just synchronize an empty function:
 
 ```js
 class Service {
     constructor() {
-        this.sync = pSync();
+        this.sync = pSynchronize();
         this.recalibrate = this.sync(() => this.recalibrate());
     }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const pSync = () => {
+const pSynchronize = () => {
 	let p = Promise.resolve();
 	const wrap = fn => {
 		return (...args) => {
@@ -15,5 +15,5 @@ const pSync = () => {
 	return wrap;
 };
 
-module.exports = pSync;
-module.exports.default = pSync;
+module.exports = pSynchronize;
+module.exports.default = pSynchronize;

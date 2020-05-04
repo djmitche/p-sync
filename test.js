@@ -1,6 +1,6 @@
 import test from 'ava';
 import delay from 'delay';
-import pSync from '.';
+import pSynchronize from '.';
 
 const testfunc = (name, events) => async i => {
 	events.push(`${name}-start:${i}`);
@@ -14,7 +14,7 @@ const testfunc = (name, events) => async i => {
 };
 
 test('sync one function', async t => {
-	const sync = pSync();
+	const sync = pSynchronize();
 	const events = [];
 	const f = sync(testfunc('f', events));
 
@@ -32,7 +32,7 @@ test('sync one function', async t => {
 });
 
 test('sync several functions', async t => {
-	const sync = pSync();
+	const sync = pSynchronize();
 	const events = [];
 	const f = sync(testfunc('f', events));
 	const g = sync(testfunc('g', events));
@@ -51,7 +51,7 @@ test('sync several functions', async t => {
 });
 
 test('continue after errors', async t => {
-	const sync = pSync();
+	const sync = pSynchronize();
 	const events = [];
 	const f = sync(testfunc('f', events));
 
